@@ -1,12 +1,10 @@
-<h1>2. MyApp</h1>
+<h1>2. MyApp (부산 관광지 소개 앱)</h1>
 <img width="270" alt="스크린샷 2023-03-30 오후 10 21 30" src="https://user-images.githubusercontent.com/114234223/228849582-7097cb36-b123-4441-8fcb-370220e63d94.png">
 
 jquery mobile : 1.4.5 <br>
 cordova : 11.1.0<br>
 tailwind css : 3.1.4 <br>
 fancybox : 3.5.7
-<br><br>
-<h2>부산의 관광지를 소개하는 앱입니다.</h2>
 <br><br>
 <img width="303" alt="스크린샷 2023-03-30 오후 11 27 04" src="https://user-images.githubusercontent.com/114234223/228868529-a11cc809-6468-4b18-9e0a-b3d017733b28.png"><br>
 cordova plugin으로 splashscreen을 적용하였습니다.<br>
