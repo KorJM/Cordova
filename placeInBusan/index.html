@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부산 관광지 소개</title>
+    
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css" />
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <script src="./js/tapbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+</head>
+
+<body>
+    <div data-role="page" id = "home"> 
+        <div id="viewSlide" class="w-96 h-96">
+            <div class="slider">
+                <img class="active" src="./image/동백섬.jpeg" />
+                <img src="./image/누리마루.webp" />
+                <img src="./image/출렁다리.jpeg" />
+                <img src="./image/더베이_야경.jpeg">
+                <img src="./image/누리마루_야경.jpeg">
+                <img src="./image/송도.jpeg">
+                <img src="./image/청사포하늘다리.jpeg">
+                <img src="./image/어린왕자.jpeg">
+                <img src="./image/송도케이블카.jpeg">
+                <img src="./image/인어상.jpeg">
+                <img src="./image/청사포쌍둥이등대.jpeg">
+                <img src="./image/감천야경.jpeg">
+            </div>
+    
+            <script src="./js/slide.js"></script>
+        </div>
+
+        <div class="mainText">
+            <p>&nbsp;&nbsp;&nbsp;요즘 핫한 부산 궁금하지 않니?</p>
+        </div>
+
+        <div id = "동백섬" onclick="$.mobile.changePage('#동백섬소개', {
+            transition: 'flip',
+            changeHash: false
+        })">
+            <div id = "동백섬bar">
+                <p style="margin-left: 10px">동백섬</p>
+            </div>
+        </div>
+
+        <div id = "청사포" onclick="$.mobile.changePage('#청사포소개', {
+            transition: 'flip',
+            changeHash: false
+        })">
+            <div id = "청사포bar">
+                <p style="margin-left: 10px">청사포</p>
+            </div>
+        </div>
+
+        <div id = "감천문화마을" onclick="$.mobile.changePage('#감천소개', {
+            transition: 'flip',
+            changeHash: false
+        })">
+            <div id = "감천문화마을bar">
+                <p style="margin-left: 10px">감천문화마을</p>
+            </div>
+        </div>
+
+        <div id = "송도" onclick="$.mobile.changePage('#송도소개', {
+            transition: 'flip',
+            changeHash: false
+        })">
+            <div id = "송도bar">
+                <p style="margin-left: 10px">송도</p>
+            </div>
+        </div>
+
+        <nav class="mobile-bottom-nav">
+            <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+                <div class="mobile-bottom-nav__item-content" onclick="$.mobile.changePage('#home', {
+                    transition: 'flip',
+                    changeHash: true
+                })">
+                    <i class="material-icons">home</i>
+                    Home
+                </div>		
+            </div>
+            <div class="mobile-bottom-nav__item chart__trigger">		
+                <div class="mobile-bottom-nav__item-content">
+                    <i class="material-icons">signal_cellular_alt_2_bar</i>
+                    Chart
+                </div>
+            </div>
+            <script></script>
+            <div class="mobile-bottom-nav__item">
+                <div class="mobile-bottom-nav__item-content">
+                    <a href="#none" target="_blank" id="search" onclick="openPop()">
+                    <i class="material-icons">search</i></a>
+                        
+                </div>		
+            </div>
+            <div class="mobile-bottom-nav__item">
+                <div class="mobile-bottom-nav__item-content"  >
+                    <i class="material-icons" id="refresh">refresh</i>
+                    Refresh
+                </div>		
+            </div>
+            <div class="mobile-bottom-nav__item dialog__trigger">
+                <div class="mobile-bottom-nav__item-content" >
+                    <i class="material-icons">info</i>          
+                    Info
+                </div>        
+            </div>	
+        </nav> 	   
+    </div>
+    
+    <div class="dialog">
+        <span class="dialog__close">&#x2715;</span>
+        <h2 class="dialog__title">Development Information</h2>
+        <p class="dialog__content">version : Ver 1.0.0 <br>
+            release note : -- <br>
+            developer : 2019575006 김민조 <br>
+            tech : HTML CSS JS cordova<br>
+            platform : ios <br>
+            tool : VScode Xcode <br>      
+            library : jQuery fancybox Tailwind css<br>
+            contact : alswh456123@kyungsung.ac.kr
+        </p>
+        <button class="dialog__action" onclick="location.href='http://github.com/KorJM/Cordova/tree/main/placeInBusan'">Read more &#8594;</button>
+    </div> 
+
+    <div class="chart">
+        <span class="chart__close">&#x2715;</span>
+        <p class="chart__title" id="chartTitle">2021년 부산 관광시 <br>기억에 남는 지역 </p>
+        <div style="height: 250px;">
+            <canvas id="myChart"></canvas>
+        </div>
+        <script src = "./js/chart.js"></script>
+        <p id="chartText">
+            * 2021년 통합 기준 상위 6개 응답 제시 <br>
+            주의) 내국인은 우선순위에 따라 3순위까지 자유롭게 응답 기술, 외국인은 선택 보기 제시 후 중복응답으로 조사하여 비교 분석시 주의를 요함<br>
+            출처 : https://www.data.go.kr/data/3081488/fileData.do
+        </p>
+    </div>
+
+    <div data-role="page" id="동백섬소개">
+        <div class="inner">
+            <div class="inner2">
+                <div class="inner3">
+                    <a href="./image/해운대_동백섬.jpg" data-fancybox data-caption=" 동백섬">
+                        <img src="./image/해운대_동백섬.jpg" alt="Image">
+                    </a> 
+                    <p> 
+                        <h1 style="font-size: 30px;">해운대동백섬</h1>
+                        분류 : 자연유산 / 천연기념물 / 지구과학기념물 / 지질지형 <br>
+                        지정(등록)일 : 1999.03.09 <br>
+                        소재지 : 부산 해운대구 우1동 783-1번지 일원 <br><br>
+                        동백나무가 자생하는 남해안에는 동백섬이란 이름을 가진 섬들이 많다. 현재 부산 해운대구의 해안대도 일반 명칭은 동백섬으로 섬 전체를 붉게 물들이는 동백나무가 섬의 이름이 되었다.
+                        해운대는 원래 섬이었으나, 육지에 가까이 있어 흐르는 물에 흙, 모래, 자갈 등이 내려와 쌓이면서 육지와 연결된 육계도이다. 군사보호지역이므로 해안의 모든 절경을 다 볼 수는 없지만, 인어상이 있는 해운대 바닷가쪽 암반과 절경만으로도 가히 천하제일이라 할 수 있다. 현재 동백섬 주위에는 동백나무와 소나무가 울창하고, 섬의 중앙에는 최치원의 동상과 기념비가 서 있다.
+                        해운대 동백섬은 최치원의 발자취가 남아 있는 유적지이며, 예로부터 그 경관이 매우 뛰어나 유명한 시인묵객들이 즐겨 찾던 곳이기도 하였다. 해송의 울창함과 바다구름의 어우러짐은 찾는 이들에게 안식을 주기에 충분하다. <br>
+                        출처 : 나무위키<br><br>
+                    </p>
+                    <a href="./image/동백섬지도.jpg" data-fancybox data-caption=" 동백섬 지도">
+                        <img src="./image/동백섬지도.jpg" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">동백섬 지도</p>
+                    <a href="./image/누리마루.webp" data-fancybox data-caption="누리마루">
+                        <img src="./image/누리마루.webp" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">누리마루</p>
+                    <a href="./image/누리마루_야경.jpeg" data-fancybox data-caption="누리마루 야경">
+                        <img src="./image/누리마루_야경.jpeg" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">누리마루 야경</p>
+                    <a href="./image/산책로.jpeg" data-fancybox data-caption="산책로">
+                        <img src="./image/산책로.jpeg" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">산책로</p>
+                    <a href="./image/출렁다리.jpeg" data-fancybox data-caption="출렁다리">
+                        <img src="./image/출렁다리.jpeg" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">출렁다리</p>
+                    <a href="./image/인어상.jpeg" data-fancybox data-caption="인어상">
+                        <img src="./image/인어상.jpeg" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">인어상</p>
+                    <a href="./image/더베이_야경.jpeg" data-fancybox data-caption="더베이 야경">
+                        <img src="./image/더베이_야경.jpeg" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">더베이 야경</p>
+                </div>
+            </div>
+        </div>
+        <nav class="mobile-bottom-nav">
+            <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+                <div class="mobile-bottom-nav__item-content" onclick="$.mobile.changePage('#home', {
+                    transition: 'flip',
+                    changeHash: true
+                })">
+                    <i class="material-icons">home</i>
+                    Home
+                </div>		
+            </div>
+            <div class="mobile-bottom-nav__item chart__trigger">		
+                <div class="mobile-bottom-nav__item-content">
+                    <i class="material-icons">signal_cellular_alt_2_bar</i>
+                    Chart
+                </div>
+            </div>
+            <script></script>
+            <div class="mobile-bottom-nav__item">
+                <div class="mobile-bottom-nav__item-content">
+                    <a href="#none" target="_blank" id="search" onclick="openPop()">
+                    <i class="material-icons">search</i></a>
+                        
+                </div>		
+            </div>
+            <div class="mobile-bottom-nav__item">
+                <div class="mobile-bottom-nav__item-content"  >
+                    <i class="material-icons" id="refresh">refresh</i>
+                    Refresh
+                </div>		
+            </div>
+            <div class="mobile-bottom-nav__item dialog__trigger">
+                <div class="mobile-bottom-nav__item-content" >
+                    <i class="material-icons">info</i>          
+                    Info
+                </div>        
+            </div>	
+        </nav>
+    </div> 
+
+    <div data-role = "page" id = "청사포소개">
+        <div class="inner">
+            <div class="inner2">
+                <div class="inner3">
+                    <a href="./image/청사포사진.jpeg" data-fancybox data-caption="직접 찍은 청사포 바다">
+                        <img src="./image/청사포사진.jpeg" alt="Image">
+                    </a> 
+                    직접 찍은 사진입니다 ㅎ
+                    <p> 
+                        <h1 style="font-size: 30px;">청사포</h1>
+                        소재지 : 부산광역시 해운대구 중동 <br><br>
+                        청사포(靑蛇浦)[푸른 구렁이의 포구]는 골매기 할매의 전설과 관련된 지명이다. 새 신부였던 김씨 부인은 고기잡이를 나간 남편이 난파하여 돌아오지 않자 매일 해안가의 바위에서 두 그루의 소나무를 심고 남편을 기다렸다고 한다. 수십 년을 하루같이 기다리는 김씨 부인을 애처롭게 여긴 용왕이 청사(靑蛇)[푸른 구렁이]를 보내 용궁에서 남편과 상봉시켰다는 전설이 전해진다. 청사가 출현했다 하여 붙여진 이름이며, 1920년경 뱀 ‘사(蛇)’ 자를 모래 ‘사(砂)’ 자로 바꾸어 청사포(靑砂浦)로 개칭했다고 전한다. 김씨가 멀리 수평선을 향하여 눈물지으면서 기다리던 큰 소나무와 그 아래 바위에는 망부송(望夫松)과 망부암(望夫岩)이라는 이름이 붙여졌다. <br>
+                        출처 : 부산역사문화대전 <br><br>
+                        <a href="./image/청사포지도.png" data-fancybox data-caption="청사포 지도">
+                            <img src="./image/청사포지도.png" alt="Image">
+                        </a> 
+                        <p style="text-align: center;">청사포 지도</p>
+                        <a href="./image/청사포마을.jpeg" data-fancybox data-caption="청사포 마을">
+                            <img src="./image/청사포마을.jpeg" alt="Image">
+                        </a> 
+                        <p style="text-align: center;">청사포 마을</p>
+                        <a href="./image/청사포해변.jpeg" data-fancybox data-caption="청사포 해변">
+                            <img src="./image/청사포해변.jpeg" alt="Image">
+                        </a> 
+                        <p style="text-align: center;">청사포 해변</p>
+                        <a href="./image/청사포쌍둥이등대.jpeg" data-fancybox data-caption="청사포 쌍둥이등대">
+                            <img src="./image/청사포쌍둥이등대.jpeg" alt="Image">
+                        </a> 
+                        <p style="text-align: center;">청사포 쌍둥이등대</p>
+                        <a href="./image/청사포다릿돌전망대.jpeg" data-fancybox data-caption="청사포 다릿돌전망대">
+                            <img src="./image/청사포다릿돌전망대.jpeg" alt="Image">
+                        </a> 
+                        <p style="text-align: center;">청사포 다릿돌전망대</p>
+                        <a href="./image/청사포하늘다리.jpeg" data-fancybox data-caption="청사포 하늘다리">
+                            <img src="./image/청사포하늘다리.jpeg" alt="Image">
+                        </a> 
+                        <p style="text-align: center;">청사포 하늘다리</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <nav class="mobile-bottom-nav">
+            <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+                <div class="mobile-bottom-nav__item-content" onclick="$.mobile.changePage('#home', {
+                    transition: 'flip',
+                    changeHash: true
+                })">
+                    <i class="material-icons">home</i>
+                    Home
+                </div>		
+            </div>
+            <div class="mobile-bottom-nav__item chart__trigger">		
+                <div class="mobile-bottom-nav__item-content">
+                    <i class="material-icons">signal_cellular_alt_2_bar</i>
+                    Chart
+                </div>
+            </div>
+            <script></script>
+            <div class="mobile-bottom-nav__item">
+                <div class="mobile-bottom-nav__item-content">
+                    <a href="#none" target="_blank" id="search" onclick="openPop()">
+                    <i class="material-icons">search</i></a>
+                        
+                </div>		
+            </div>
+            <div class="mobile-bottom-nav__item">
+                <div class="mobile-bottom-nav__item-content"  >
+                    <i class="material-icons" id="refresh">refresh</i>
+                    Refresh
+                </div>		
+            </div>
+            <div class="mobile-bottom-nav__item dialog__trigger">
+                <div class="mobile-bottom-nav__item-content" >
+                    <i class="material-icons">info</i>          
+                    Info
+                </div>        
+            </div>	
+        </nav>
+    </div>
+
+    <div data-role="page" id="감천소개">
+        <div class="inner">
+            <div class="inner2">
+                <div class="inner3">
+                    <a href="./image/감천마을.jpeg" data-fancybox data-caption="감천문화마을">
+                        <img src="./image/감천마을.jpeg" alt="Image">
+                    </a> 
+                    <p> 
+                        <h1 style="font-size: 30px;">감천문화마을</h1>
+                        소재지 : 부산광역시 사하구 감내2로 203 (감천동) <br><br>
+                        감천문화마을은 1950년대 태극도 신앙촌 신도와 6.25 피난민의 집단 거주지로 형성된 곳으로 산자락을 따라 질서정연하게 늘어선 계단식 집단 주거형태와 모든 길이 통하는 미로미로 골목길의 독특한 경관을 자랑하는 곳이다. 골목길 곳곳의 조형작품 투어 등 지역주민들에 의해 재창조된 체험관광을 즐길 수 있다.
+                        <br>
+                    </p>
+                    <p> <h2 style="font-size: 20px;">추천 투어 코스</h2>
+                        작품감상 및 포토존 투어코스 (2시간 ~ 2시간30분 소요) <br>
+                        마을안내센터→작은박물관→감내카페→하늘마루→미니숍→색즉시공→어울마당→감내맛집→독락의 탑→어린왕자와 사막여우→등대포토존→천덕수우물→바다포토존→평화의집→별계단집→감내어울터→멍멍이가 있는 집→길냥이와 함께하는 다정한 일상→화혜장→감내골행복발전소→감천의 얼굴→움직이는 마을→감천 태극문화 홍보관→감천2동시장→행복을 담은 장바구니→희망의 메시지
+                    </p><br><br>
+                    <a href="./image/감천문화마을지도.jpeg" data-fancybox data-caption="감천문화마을 지도">
+                        <img src="./image/감천문화마을지도.jpeg" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">감천문화마을 지도</p>
+                    <a href="./image/감천벽화1.jpeg" data-fancybox data-caption="감천문화마을 벽화">
+                        <img src="./image/감천벽화1.jpeg" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">감천문화마을 벽화</p>
+                    <a href="./image/감천벽화2.jpeg" data-fancybox data-caption="감천문화마을 벽화">
+                        <img src="./image/감천벽화2.jpeg" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">벽화</p>
+                    <a href="./image/감천조형물.jpeg" data-fancybox data-caption="감천문화마을 조형물">
+                        <img src="./image/감천조형물.jpeg" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">조형물</p>
+                    <a href="./image/감천야경.jpeg" data-fancybox data-caption="감천문화마을 야경">
+                        <img src="./image/감천야경.jpeg" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">야경</p>
+                </div>
+            </div>
+        </div>
+        <nav class="mobile-bottom-nav">
+            <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+                <div class="mobile-bottom-nav__item-content" onclick="$.mobile.changePage('#home', {
+                    transition: 'flip',
+                    changeHash: true
+                })">
+                    <i class="material-icons">home</i>
+                    Home
+                </div>		
+            </div>
+            <div class="mobile-bottom-nav__item chart__trigger">		
+                <div class="mobile-bottom-nav__item-content">
+                    <i class="material-icons">signal_cellular_alt_2_bar</i>
+                    Chart
+                </div>
+            </div>
+            <script></script>
+            <div class="mobile-bottom-nav__item">
+                <div class="mobile-bottom-nav__item-content">
+                    <a href="#none" target="_blank" id="search" onclick="openPop()">
+                    <i class="material-icons">search</i></a>
+                        
+                </div>		
+            </div>
+            <div class="mobile-bottom-nav__item">
+                <div class="mobile-bottom-nav__item-content"  >
+                    <i class="material-icons" id="refresh">refresh</i>
+                    Refresh
+                </div>		
+            </div>
+            <div class="mobile-bottom-nav__item dialog__trigger">
+                <div class="mobile-bottom-nav__item-content" >
+                    <i class="material-icons">info</i>          
+                    Info
+                </div>        
+            </div>	
+        </nav>
+    </div>
+
+    <div data-role="page" id="송도소개">
+        <div class="inner">
+            <div class="inner2">
+                <div class="inner3">
+                    <a href="./image/해운대_동백섬.jpg" data-fancybox data-caption=" 동백섬">
+                        <img src="./image/해운대_동백섬.jpg" alt="Image">
+                    </a> 
+                    <p> 
+                        <h1 style="font-size: 30px;">송도</h1>
+                        소재지 : 부산광역시 서구 암남동 <br><br>
+                        송도해수욕장은 1913년에 개장한 우리나라 1호 해수욕장으로 개장 100주년을 넘어선 해수욕장이다. 1960~70년대 최고의 전성기를 누렸으나 80년대에 들어서면서 아무도 찾지 않는 쓸쓸한 해수욕장이 되어버렸다. 하지만 천혜의 자연환경을 가진 송도해수욕장의 훼손을 안타까워하는 마음이 모여 지속적인 정비가 이루어졌고, 그 결과 예전보다 더 아름다운 해수욕장으로 변모하였다. 깨끗한 모래사장과 맑은 수질, 구름산책로, 해상케이블카를 가진 송도해수욕장은 이제 연간 500만이 넘는 관광객이 찾는 명소가 되었다.
+                        <br><br>
+                    </p>
+                    <a href="./image/송도지도.jpeg" data-fancybox data-caption="송도 지도">
+                        <img src="./image/송도지도.jpeg" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">송도 지도</p>
+                    <a href="./image/송도해수욕장.jpeg" data-fancybox data-caption="송도 해수욕장">
+                        <img src="./image/송도해수욕장.jpeg" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">송도 해수욕장</p>
+                    <a href="./image/송도케이블카.jpeg" data-fancybox data-caption="송도 케이블카">
+                        <img src="./image/송도케이블카.jpeg" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">송도 케이블카</p>
+                    <a href="./image/송도구름산책로.jpeg" data-fancybox data-caption="송도 구름산책로">
+                        <img src="./image/송도구름산책로.jpeg" alt="Image">
+                    </a> 
+                    <p style="text-align: center;">송도 구름산책로</p>
+                </div>
+            </div>
+        </div>
+        <nav class="mobile-bottom-nav">
+            <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+                <div class="mobile-bottom-nav__item-content" onclick="$.mobile.changePage('#home', {
+                    transition: 'flip',
+                    changeHash: true
+                })">
+                    <i class="material-icons">home</i>
+                    Home
+                </div>		
+            </div>
+            <div class="mobile-bottom-nav__item chart__trigger">		
+                <div class="mobile-bottom-nav__item-content">
+                    <i class="material-icons">signal_cellular_alt_2_bar</i>
+                    Chart
+                </div>
+            </div>
+            <script></script>
+            <div class="mobile-bottom-nav__item">
+                <div class="mobile-bottom-nav__item-content">
+                    <a href="#none" target="_blank" id="search" onclick="openPop()">
+                    <i class="material-icons">search</i></a>
+                        
+                </div>		
+            </div>
+            <div class="mobile-bottom-nav__item">
+                <div class="mobile-bottom-nav__item-content"  >
+                    <i class="material-icons" id="refresh">refresh</i>
+                    Refresh
+                </div>		
+            </div>
+            <div class="mobile-bottom-nav__item dialog__trigger">
+                <div class="mobile-bottom-nav__item-content" >
+                    <i class="material-icons">info</i>          
+                    Info
+                </div>        
+            </div>	
+        </nav>
+    </div>
+</div>
+</body>
+</html>
