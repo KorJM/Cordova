@@ -9,7 +9,10 @@ fancybox : 3.5.7
 <img width="303" alt="스크린샷 2023-03-30 오후 11 27 04" src="https://user-images.githubusercontent.com/114234223/228868529-a11cc809-6468-4b18-9e0a-b3d017733b28.png"><br>
 cordova plugin으로 splashscreen을 적용하였습니다.<br>
 앱 실행 시 2초동안 splashscreen이 적용되고 이후 메인페이지로 넘어갑니다.<br><br>
-![ezgif-5-95990ee0e8](https://user-images.githubusercontent.com/114234223/228880236-c0f9200d-62f0-40a3-968c-1599e65dd177.gif) <br>
+
+![ezgif-5-95990ee0e8](https://user-images.githubusercontent.com/114234223/228880236-c0f9200d-62f0-40a3-968c-1599e65dd177.gif) 
+
+<br>
 js의 setInterval()를 사용해 자동 이미지 슬라이더를 만들었습니다.<br>
 하단의 탭바는 스크롤 길이와 상관없이 화면 하단에 고정되도록 하였습니다.<br>
 탭바의 기능으로는<br>
@@ -31,6 +34,13 @@ READ MORE ->을 누르면 현재 깃허브 사이트로 이동됩니다.<br><br>
 <img width="306" alt="스크린샷 2023-03-30 오후 11 48 50" src="https://user-images.githubusercontent.com/114234223/228881026-2c8d6b9b-014a-4581-8583-2e0d3616826e.png">
 <br>컨텐츠를 넣는 div에 스크롤 기능을 추가하였습니다.<br><br>
 <img width="306" alt="스크린샷 2023-03-30 오후 11 49 14" src="https://user-images.githubusercontent.com/114234223/228881268-ec3521ac-559f-43b9-bd65-92242a29b66c.png">
-<br>fancybox를 사용하여 이미지 클릭 시 확대 팝업이 생성되도록 하였습니다.<br><br><br>------------------------------------------------------<br>
+<br>fancybox를 사용하여 이미지 클릭 시 확대 팝업이 생성되도록 하였습니다.<br><br><br>_____________________________________________________________<br>
 <작동 gif><br>
+
 ![ezgif-5-46d3925754](https://user-images.githubusercontent.com/114234223/228886733-22be2b60-ad50-4bc9-a928-13acb7ef740f.gif)
+
+<br>_____________________________________________________________<br>
+<h2>Spring 서버 연결</h2>
+<img width="1512" alt="스크린샷 2023-03-31 오전 11 21 17" src="https://user-images.githubusercontent.com/114234223/229007204-63b03e63-d241-44bc-8083-456e519792c9.png">
+
+
