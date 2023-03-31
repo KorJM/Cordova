@@ -9,6 +9,7 @@ fancybox : 3.5.7
 <img width="303" alt="스크린샷 2023-03-30 오후 11 27 04" src="https://user-images.githubusercontent.com/114234223/228868529-a11cc809-6468-4b18-9e0a-b3d017733b28.png"><br>
 cordova plugin으로 splashscreen을 적용하였습니다.<br>
 앱 실행 시 2초동안 splashscreen이 적용되고 이후 메인페이지로 넘어갑니다.<br><br>
+<br>
 
 ![ezgif-5-95990ee0e8](https://user-images.githubusercontent.com/114234223/228880236-c0f9200d-62f0-40a3-968c-1599e65dd177.gif) 
 
