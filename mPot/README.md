@@ -5,7 +5,8 @@ jquery mobile: 1.4.5 <br>
 cordova: 11.1.0
 <br><br>
 실행 첫 화면 <br>
-<img width="298" alt="스크린샷 2023-03-30 오후 10 12 01" src="https://user-images.githubusercontent.com/114234223/228849193-8d5e7658-fce0-4e67-be74-4df911f1fde3.png">
+<img width="305" alt="스크린샷 2023-03-31 오후 3 17 52" src="https://user-images.githubusercontent.com/114234223/229038909-4f9595ab-2c6d-4172-b51a-74c2d1165683.png">
+
 <br>
 페이지 이동 <br>
 <img width="298" alt="스크린샷 2023-03-30 오후 10 12 13" src="https://user-images.githubusercontent.com/114234223/228849768-b9047f01-271d-428c-80f2-968590a0f5fd.png">
