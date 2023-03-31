@@ -1,7 +1,7 @@
 <h1>2. MyApp (부산 관광지 소개 앱)</h1>
 <img width="270" alt="스크린샷 2023-03-30 오후 10 21 30" src="https://user-images.githubusercontent.com/114234223/228849582-7097cb36-b123-4441-8fcb-370220e63d94.png">
-
-jquery mobile : 1.4.5 <br>
+jQuery : 1.11.1 <br>
+jQuery-mobile : 1.4.5 <br>
 cordova : 11.1.0<br>
 tailwind css : 3.1.4 <br>
 fancybox : 3.5.7
